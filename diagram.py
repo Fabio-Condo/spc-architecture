@@ -10,6 +10,8 @@ evolis_elypso_printer_url = "images/elypso-64.png"
 evolis_privelio_printer_url = "images/privelio-64.png"
 evolis_service_provider = "images/evolis_logo.png"
 browser = "images/chrome-browser.png"
+logs_url = "images/txt-image.png"
+
 
 with Diagram("SCI Fullstack Card Printing Application Architecture", show=True):
     user = User("User")
@@ -24,6 +26,9 @@ with Diagram("SCI Fullstack Card Printing Application Architecture", show=True):
 
         with Cluster("Database"):
             mysql = MySQL("MySQL Database")
+        
+        with Cluster("Logs"):
+            logs = Custom("Logs", logs_url)
 
         with Cluster("Print Services"):
             service_provider = Custom("Evolis Service Provider", evolis_service_provider)
@@ -39,6 +44,7 @@ with Diagram("SCI Fullstack Card Printing Application Architecture", show=True):
     # Conexões principais
     user >> browser >> angular >> spring
     spring >> mysql
+    spring >> logs
     spring >> service_provider >> evolis_elypso_printer
     spring >> evolis_privelio_printer
     spring >> ad_server  # Conexão ao Active Directory no servidor central
