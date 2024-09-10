@@ -8,7 +8,7 @@ from diagrams.programming.framework import Angular, Spring
 evolis_service_provider = "images/evolis_logo.png"
 logs_url = "images/txt-image.png"
 
-with Diagram("Infraestrutura da Aplicação Full-Stack", show=True):
+with Diagram("SCI Fullstack Card Printing Application infraestruture", show=True):
     with Cluster("Server"):
         with Cluster("Docker Containers"):
             with Cluster("Frontend"):
@@ -32,8 +32,8 @@ with Diagram("Infraestrutura da Aplicação Full-Stack", show=True):
         spring >> logs
         spring >> service_provider
 
-    with Cluster("Servidor Central"):
-        ldap = Server("Servidor LDAP")
+    with Cluster("Central Server"):
+        ad_server = Server("Active Directory")
 
     # Conexões
-    spring >> ldap
+    spring >> ad_server
