@@ -12,7 +12,7 @@ evolis_service_provider = "images/evolis_logo.png"
 browser = "images/chrome-browser.png"
 
 with Diagram("SCI Fullstack Card Printing Application Architecture", show=True):
-    user = User("Client")
+    user = User("User")
     browser = Custom("Browser", browser)
 
     with Cluster("Server"):
