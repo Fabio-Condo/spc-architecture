@@ -29,8 +29,8 @@ with Diagram("SCI Fullstack Card Printing Application Architecture", show=True):
             service_provider = Custom("Evolis Service Provider", evolis_service_provider)
 
     # Impressoras fora do servidor
-    evolis_elypso_printer = Custom("Evolis Elypso/Primacy", evolis_elypso_printer_url)
-    evolis_privelio_printer = Custom("Evolis Privelio XT", evolis_privelio_printer_url)
+    evolis_elypso_printer = Custom("Evolis Elypso/Primacy (1..N)", evolis_elypso_printer_url)
+    evolis_privelio_printer = Custom("Evolis Privelio XT (1..N)", evolis_privelio_printer_url)
 
     # Servidor central contendo o Active Directory
     with Cluster("Central Server"):
