@@ -44,9 +44,9 @@ with Diagram("SCI Fullstack Card Printing Application Architecture", show=True):
     spring >> ad_server  # Conexão ao Active Directory no servidor central
 
     # Resposta
-    #spring >> angular >> browser >> user
-    #evolis_elypso_printer >> service_provider
-    #service_provider >> spring
-    #mysql >> spring
-    #evolis_privelio_printer >> spring
-    #ad_server >> spring
+    spring >> angular >> browser >> user
+    evolis_elypso_printer >> service_provider
+    service_provider >> spring
+    mysql >> spring
+    evolis_privelio_printer >> spring
+    ad_server >> spring
