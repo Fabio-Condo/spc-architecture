@@ -29,14 +29,14 @@ with Diagram("Arquitetura da Aplicação de Impressão de Cartões", show=True):
 
     # Impressoras
     elypso = Custom("Elypso/Primacy", "images/elypso-64.png")
-    privelio = Custom("Privelio XT", "images/privelio-64.png")
+    #privelio = Custom("Privelio XT", "images/privelio-64.png")
 
     # Fluxo de Conexões
     user >> browser >> angular >> spring_boot
     spring_boot >> mysql
     spring_boot >> print_service
-    spring_boot >> Edge(label="Conexão Direta", color="red") >> privelio
+    #spring_boot >> Edge(label="Conexão Direta", color="red") >> privelio
     print_service >> Edge(label="Envio de comandos", color="blue") >> elypso
     elypso >> Edge(label="Status e Respostas", color="green") >> print_service
-    privelio >> Edge(label="Status e Respostas", color="green") >> spring_boot
+    #privelio >> Edge(label="Status e Respostas", color="green") >> spring_boot
     print_service >> Edge(label="Respostas", style="dotted", color="orange") >> spring_boot
