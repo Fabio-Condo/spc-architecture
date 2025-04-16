@@ -39,12 +39,12 @@ with Diagram("SCI Fullstack Card Printing Application Architecture", show=True, 
 
     # Cluster para o Bank Central Server
     with Cluster("Bank Central Server"):
-        otp_service = Server("OTP Service")
+        otp_sms_service = Server("OTP SMS Service")
 
     # Conexões
     user >> browser >> angular >> spring  # Comunicação do usuário até o Spring
     spring >> mysql  # Conexão Spring com o MySQL
     #spring >> logs  # Conexão Spring com os logs
     spring >> service_provider >> evolis_kiosk_printer  # Comunicação do Spring com o serviço de impressão
-    spring >> otp_service  # Comunicação do Spring com o serviço OTP
-    user >> otp_service  # Comunicação direta do usuário com o serviço OTP
+    spring >> otp_sms_service  # Comunicação do Spring com o serviço OTP
+    user >> otp_sms_service  # Comunicação direta do usuário com o serviço OTP
